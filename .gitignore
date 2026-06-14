@@ -1,6 +1,5 @@
-.vs/
-bin/
-obj/
+# Dependencies
 node_modules/
+
+# Environment variables
 .env
-*.log

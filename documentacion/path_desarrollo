@@ -1,0 +1,119 @@
+Etapa 2 — Ordenar mejor el backend
+
+Cuando los endpoints básicos funcionen, conviene ordenar el código.
+
+Ahora estamos haciendo:
+
+routes → controllers → SQL directo
+
+Eso está bien para aprender.
+
+Después podríamos dejarlo más profesional:
+
+routes
+   ↓
+controllers
+   ↓
+services
+   ↓
+repositories
+   ↓
+database
+
+Pero todavía no lo haría. Primero conviene terminar el flujo completo.
+
+Etapa 3 — Flujo completo del sistema
+
+El objetivo funcional mínimo sería este:
+
+1. El cliente se registra
+2. El cliente ve productos disponibles
+3. El cliente registra un producto comprado
+4. El cliente solicita garantía sobre ese producto
+5. La empresa ve las solicitudes
+6. La empresa cambia el estado de la solicitud
+
+Traducido a endpoints:
+
+POST /api/clientes
+GET /api/productos
+POST /api/productos-comprados
+POST /api/garantias
+GET /api/garantias
+PUT /api/garantias/:id/estado
+
+Cuando eso funcione, el backend ya cumple el proyecto.
+
+Etapa 4 — Frontend
+
+Después del backend, podríamos hacer un frontend simple.
+
+Pantallas mínimas:
+
+1. Pantalla de inicio
+2. Formulario para registrar cliente
+3. Listado de productos
+4. Formulario para registrar producto comprado
+5. Formulario para solicitar garantía
+6. Panel simple para ver garantías
+7. Botón o selector para cambiar estado
+
+Tecnología recomendada:
+
+React + Vite
+
+Pero todavía no empezaría frontend hasta cerrar el backend básico.
+
+Etapa 5 — Documentación del proyecto
+
+Como es para universidad, también conviene armar documentación.
+
+Carpeta:
+
+documentacion
+
+Contenido recomendado:
+
+1. Descripción del sistema
+2. Objetivo del proyecto
+3. Modelo de base de datos
+4. Explicación de tablas
+5. Endpoints de la API
+6. Capturas de pruebas
+7. Flujo de uso
+8. Conclusión
+Etapa 6 — README
+
+En el README.md deberíamos explicar:
+
+1. Qué es el proyecto
+2. Tecnologías usadas
+3. Cómo instalar dependencias
+4. Cómo configurar .env
+5. Cómo ejecutar backend
+6. Endpoints disponibles
+7. Cómo probar la API
+
+Ejemplo:
+
+cd backend
+pnpm install
+pnpm dev
+Path resumido
+FASE 1 — Base de datos
+Estado: completada
+
+FASE 2 — Backend inicial
+Estado: en progreso
+
+FASE 3 — Endpoints principales
+Estado: falta completar
+
+FASE 4 — Frontend simple
+Estado: pendiente
+
+FASE 5 — Documentación
+Estado: pendiente
+
+FASE 6 — README y entrega final
+Estado: pendiente
