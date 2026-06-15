@@ -20,6 +20,14 @@ import clientesRoutes from './routes/clientes.routes.js';
 // con los productos comprados por los clientes.
 import productosCompradosRoutes from './routes/productosComprados.routes.js';
 
+// Importa las rutas de garantías desde el archivo garantias.routes.js. Estas rutas contienen los endpoints 
+// relacionados con las garantías.
+import garantiasRoutes from './routes/garantias.routes.js';
+
+// Importa las rutas de salud desde el archivo healt.routes.js. Estas rutas contienen los endpoints relacionados con el estado 
+// de la API y la conexión a la base de datos.
+import healthRoutes from './routes/healt.routes.js';
+
 //Carga las variables de entorno desde el archivo .env. Esto permite que podamos usar las variables definidas en ese archivo a lo largo de nuestro código.
 dotenv.config();
 
@@ -39,6 +47,13 @@ app.use('/api', clientesRoutes);
 // Usa las rutas de productos comprados en la aplicación. Esto significa que cualquier solicitud que comience con '/api' 
 // será manejada por las rutas definidas en productosCompradosRoutes.
 app.use('/api', productosCompradosRoutes);
+
+// Usa las rutas de garantías en la aplicación. Esto significa que cualquier solicitud que comience con '/api' 
+// será manejada por las rutas definidas en garantiasRoutes.
+app.use('/api', garantiasRoutes);
+
+// Usa las rutas de salud en la aplicación. Esto significa que cualquier solicitud que comience con '/api/health'
+app.use('/api/health', healthRoutes);
 
 // Usa cors para permitir solicitudes desde el frontend.
 app.use(cors());
